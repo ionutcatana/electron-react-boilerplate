@@ -80,7 +80,8 @@ export function MainPage() {
           ></textarea>
           <textarea
             placeholder="API response"
-            defaultValue={responseText}
+            value={responseText || ""}
+            onChange={undefined}
           ></textarea>
         </div>
 
