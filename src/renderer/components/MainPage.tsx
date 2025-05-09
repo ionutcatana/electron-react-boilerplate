@@ -8,6 +8,12 @@ export function MainPage() {
   const [requestText, setRequestText] = useState('');
   const [responseText, setResponseText] = useState('');
 
+  // test custom value
+  // relevant files:
+  // - interfaces.d.ts
+  // - preload.local.ts
+  const preloadedValue = window.customValue.value;
+
   // handler functions
   function handleApiUrlChange(e: ChangeEvent<HTMLInputElement>): void {
     const value = e.target.value;
@@ -41,7 +47,7 @@ export function MainPage() {
   return (
     <div className="container">
       <h1>Hello</h1>
-
+      <h2>{preloadedValue}</h2>
       {/* settings */}
       <div className="settings">
         {/* http verb */}

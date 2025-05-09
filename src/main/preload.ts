@@ -26,4 +26,6 @@ const electronHandler = {
 
 contextBridge.exposeInMainWorld('electron', electronHandler);
 
+import './preload.custom'
+
 export type ElectronHandler = typeof electronHandler;
