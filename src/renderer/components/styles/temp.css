@@ -1,0 +1,23 @@
+.split-vertical {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.split-vertical textarea {
+  flex: 1 1 0;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.settings {
+  padding-bottom: 0.5rem;
+}
+
+label {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
