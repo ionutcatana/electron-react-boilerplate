@@ -1,12 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from "react";
-import "./styles/temp.css";
+import { ChangeEvent, FormEvent, useState } from 'react';
+import './styles/temp.css';
 
 export function MainPage() {
   // state hooks
-  const [apiUrl, setApiUrl] = useState("");
-  const [httpVerb, setHttpVerb] = useState("");
-  const [requestText, setRequestText] = useState("");
-  const [responseText, setResponseText] = useState("");
+  const [apiUrl, setApiUrl] = useState('');
+  const [httpVerb, setHttpVerb] = useState('');
+  const [requestText, setRequestText] = useState('');
+  const [responseText, setResponseText] = useState('');
 
   // handler functions
   function handleApiUrlChange(e: ChangeEvent<HTMLInputElement>): void {
@@ -28,9 +28,13 @@ export function MainPage() {
   }
 
   // api interaction
-  function sendRequest(apiUrl: string, httpVerb: string, requestBody: string): void {
+  function sendRequest(
+    apiUrl: string,
+    httpVerb: string,
+    requestBody: string,
+  ): void {
     // handle...
-    setResponseText("Your request has been received!");
+    setResponseText('Your request has been received!');
   }
 
   // document structure
@@ -40,10 +44,11 @@ export function MainPage() {
 
       {/* settings */}
       <div className="settings">
-
         {/* http verb */}
         <label htmlFor="http-verb">Select an HTTP verb: </label>
-        <select name="method-selector" id="method-selector"
+        <select
+          name="method-selector"
+          id="method-selector"
           value={httpVerb}
           onChange={(e) => handleHttpVerbChange(e)}
         >
@@ -56,18 +61,34 @@ export function MainPage() {
 
         {/* url of the api */}
         <label htmlFor="api-url">API URL: </label>
-        <input type="text" name="api-url" id="api-url-input" value={apiUrl} onChange={(e) => handleApiUrlChange(e)}/>
-
+        <input
+          type="text"
+          name="api-url"
+          id="api-url-input"
+          value={apiUrl}
+          onChange={(e) => handleApiUrlChange(e)}
+        />
       </div>
 
-      {/* display */}
-      <div className="split-vertical">
-        <textarea placeholder="Your request" value={requestText} onChange={(e) => handleRequestTextChange(e)}></textarea>
-        <textarea placeholder="API response" defaultValue={responseText}></textarea>
-      </div>
+      <div>
+        {/* display */}
+        <div className="split-vertical">
+          <textarea
+            placeholder="Your request"
+            value={requestText}
+            onChange={(e) => handleRequestTextChange(e)}
+          ></textarea>
+          <textarea
+            placeholder="API response"
+            defaultValue={responseText}
+          ></textarea>
+        </div>
 
-      {/* controls */}
-      <button onClick={() => sendRequest(apiUrl, httpVerb, requestText)}>Send</button>
+        {/* controls */}
+        <button onClick={() => sendRequest(apiUrl, httpVerb, requestText)}>
+          Send
+        </button>
+      </div>
     </div>
   );
 }
