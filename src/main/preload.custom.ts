@@ -8,3 +8,7 @@ contextBridge.exposeInMainWorld('customValue', {
 contextBridge.exposeInMainWorld('electronApi', {
     setTitle: (title: string) => ipcRenderer.send('set-title', title)
 })
+
+// contextBridge.executeInMainWorld('apiAccess', {
+//     sendRequest: (httpVerb, apiUrl, isJson, message) =>
+// })
