@@ -87,7 +87,7 @@ export function MainPage() {
           <textarea
             placeholder="API response"
             value={responseText || ""}
-            onChange={undefined}
+            onChange={() => {}}
           ></textarea>
         </div>
 
@@ -95,6 +95,8 @@ export function MainPage() {
         <button onClick={() => sendRequest(apiUrl, httpVerb, requestText)}>
           Send
         </button>
+
+        <button onClick={() => window.electronApi.setTitle(httpVerb)}>Change title</button>
       </div>
     </div>
   );

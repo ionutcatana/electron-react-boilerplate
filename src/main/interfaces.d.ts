@@ -1,9 +1,14 @@
 export interface ICustom {
-    value: number
+    value: string
+}
+
+export interface ICustomApi {
+    setTitle: any
 }
 
 declare global {
     interface Window {
-        customValue: ICustom 
+        customValue: ICustom,
+        electronApi: ICustomApi
     }
 }

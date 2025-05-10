@@ -1,5 +1,10 @@
-import { contextBridge } from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
 
+//
 contextBridge.exposeInMainWorld('customValue', {
-    value: 13
+    value: 'click some buttons'
 });
+
+contextBridge.exposeInMainWorld('electronApi', {
+    setTitle: (title: string) => ipcRenderer.send('set-title', title)
+})
